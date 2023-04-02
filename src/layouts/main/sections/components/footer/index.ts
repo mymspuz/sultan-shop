@@ -1,0 +1,7 @@
+export { default as FooterLogo } from './FooterLogo'
+export { default as FooterAbout } from './FooterAbout'
+export { default as FooterSubscription } from './FooterSubscription'
+export { default as FooterMenu } from './FooterMenu'
+export { default as FooterCatalog } from './FooterCatalog'
+export { default as FooterMessenger } from './FooterMessenger'
+export { default as FooterContacts } from './FooterContacts'

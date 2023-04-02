@@ -1,0 +1,11 @@
+{
+  "manufacture": [
+    {"id": 1, "name": "Grifon"},
+    {"id": 2, "name": "Boyscout"},
+    {"id": 3, "name": "Paclan"},
+    {"id": 4, "name": "Булгари Грин"},
+    {"id": 5, "name": "Name 1"},
+    {"id": 6, "name": "Name 2"},
+    {"id": 7, "name": "Name 3"}
+  ]
+}

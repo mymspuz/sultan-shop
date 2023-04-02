@@ -1,0 +1,126 @@
+@import 'variables'
+
+.catalog-sort
+  border: none
+  outline: none
+
+.type-filter-head
+  gap: 11px
+  @media only screen and (max-width: $md)
+    flex-wrap: wrap
+    justify-content: start
+  &__item
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: $vm * 2
+    background-color: white
+    box-shadow: 0 15px 70px -11px rgba(43, 28, 1, 0.04)
+    border-radius: 10px
+    text-align: center
+    color: $colorGrey-1
+    font-weight: $font-weight-normal
+    font-size: $font-size-sm
+    line-height: $line-height-base
+    cursor: pointer
+    &:hover
+      background-color: $colorPrimaryHover
+    &.active
+      background-color: $colorPrimaryActive
+
+.filter-title
+  font-weight: $font-weight-mediumbold
+  font-size: $font-size-md
+  line-height: $line-height-lg
+  color: $colorGrey-2
+
+input.range
+  max-width: 100px
+  background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%)
+  border-radius: 1000px
+  border: none
+  outline: none
+  text-align: center
+  color: $colorGrey-1
+  font-weight: $font-weight-light
+  font-size: $font-size-base
+  line-height: $line-height-sm
+  padding: 4px 0
+
+.catalog
+  .catalog-content
+    @media only screen and (max-width: $xs)
+      flex-direction: column
+    .catalog-sidebar
+      width: 240px
+      @media only screen and (max-width: $xs)
+        width: 290px
+      .catalog-filter
+        .filter-manufacture
+          margin-top: 30px
+          .input-search
+            margin-top: 15px
+        .filter-type-sb
+          li
+            &:hover
+              color: $colorPrimaryHover
+            &.active
+              color: $colorPrimaryActive
+    .catalog-products
+      margin-left: 108px
+      max-width: 1020px
+      @media only screen and (max-width: $xs)
+        margin-left: 0
+        justify-content: center
+      .products-list
+        gap: 21px
+        @media only screen and (max-width: $xs)
+          justify-content: center
+        .product
+          //height: 490px
+          width: 326px
+          background: white
+          box-shadow: 0 14px 39px -11px rgba(0, 0, 0, 0.06)
+          border-radius: 10px
+          padding: 0 21px 29px 23px
+          &__img
+            height: 240px
+            width: 100%
+            background-repeat: no-repeat
+            background-position: center
+            background-size: contain
+
+          .btn
+            letter-spacing: 0.15em
+      .next, .prev
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 35px
+        width: 35px
+        cursor: pointer
+      .pag-empty
+        height: 35px
+        width: 35px
+      .pagination
+        li
+          display: flex
+          justify-content: center
+          align-items: center
+          color: $colorGrey-1
+          font-weight: $font-weight-mediumbold
+          font-size: $font-size-sm
+          line-height: $line-height-md
+          height: 35px
+          width: 35px
+          cursor: pointer
+          &.active, &:hover
+            background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%)
+            border-radius: 1000px
+      .category-desc
+        max-width: 910px
+        margin-bottom: 200px
+        color: $colorGrey-1
+        font-weight: $font-weight-normal
+        font-size: $font-size-sm
+        line-height: $line-height-lg

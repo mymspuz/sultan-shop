@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="sass/style.css">
+</head>
+<body>
+    <header class="d-flex f-direct j-content-start">
+        <div class="container">
+            <div class="header__menu d-flex j-content-sb a-items">
+                <div class="header-contacts d-flex j-content-start a-items">
+                    <div class="d-flex j-content-start a-items h-100">
+                        <i class="i-point"></i>
+                        <p class="ml-s-6 pr-m-4 c-grey-2 fs-3 lh-2 fw-semibold" style="border-right: 1px dashed rgba(0, 0, 0, .05)">
+                            г. Кокчетав, ул. Ж. Ташенова 129Б
+                            <br>
+                            <span class="c-grey-1 fs-2 lh-2 fw-light">(Рынок Восточный)</span>
+                        </p>
+                    </div>
+                    <div class="d-flex j-content-start a-items ml-m-4 h-100">
+                        <i class="i-mail"></i>
+                        <p class="ml-s-6 fs-3 lh-2">
+                            <a href="mailto:opt.sultan@mail.ru" class="c-grey-2 fs-3 lh-2 fw-semibold">opt.sultan@mail.ru</a>
+                            <br>
+                            <span class="c-grey-1 fs-2 lh-2 fw-light">На связи в любое время</span>
+                        </p>
+                    </div>
+                </div>
+                <nav class="header-menu d-flex j-content-end a-items">
+                    <ul class="d-flex j-content-end a-items c-grey-1 fs-3 fw-normal lh-6">
+                        <li class="pr-m-6 b-right-2"><a href="#">О компании</a></li>
+                        <li class="px-m-6 b-right-2"><a href="#">Доставка и оплата</a></li>
+                        <li class="px-m-6 b-right-2"><a href="#">Возврат</a></li>
+                        <li class="pl-m-6"><a href="#">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header__menu-mobile d-flex j-content-sb a-items">
+                <button class="btn small"><i class="i-menu-open"></i></button>
+                <div class="d-flex j-content-start a-items">
+                    <a href="#"><i class="i-logo-bl"></i></a>
+                </div>
+                <div class="toolbar-basket">
+                    <div class="toolbar-basket__img">
+                        <i class="i-basket"></i>
+                        <div class="basket-count">3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__dividing w-100 bg-grey-1 op-2"></div>
+        <div class="container">
+            <div class="header__toolbar d-flex j-content-sb a-items">
+                <div class="d-flex j-content-start a-items">
+                    <a href="#"><i class="i-logo-bl"></i></a>
+                </div>
+                <button class="btn medium">
+                    Каталог
+                    <i class="i-catalog"></i>
+                </button>
+                <div class="input-search">
+                    <input placeholder="Поиск...">
+                    <button class="btn small"><i class="i-search"></i></button>
+                </div>
+                <div class="call-center d-flex j-content-sb a-items">
+                    <div class="call-center__content d-flex f-direct j-content-sb a-items-end mr-m-2">
+                        <p class="c-grey-2 fs-3 lh-6 fw-semibold">+7 (777) 490-00-91</p>
+                        <p class="c-grey-1 fs-2 lh-6 fw-light f-ws">время работы: 9:00-20:00</p>
+                        <a href="#" class="c-grey-1 fs-1 lh-6 fw-normal tdl-u">Заказать звонок</a>
+                    </div>
+                    <div class="call-center__photo">
+                        <img src="img/call-center.png">
+                        <div class="call-center__status"></div>
+                    </div>
+                </div>
+                <div class="b-left-2 b-right-2 px-m-3">
+                    <button class="btn price">
+                        Прайс-лист
+                        <i class="i-price-list"></i>
+                    </button>
+                </div>
+                <div class="toolbar-basket d-flex j-content-sb a-items p-m-2">
+                    <div class="toolbar-basket__img mr-s-4">
+                        <i class="i-basket"></i>
+                        <div class="basket-count d-flex j-content a-items fs-2 lh-1 fw-bold c-white">3</div>
+                    </div>
+                    <div class="d-flex j-content a-items-start f-direct ml-s-4">
+                        <p class="c-grey-1 fs-2 lh-4 fw-light">Корзина</p>
+                        <p class="c-grey-2 fs-3 lh-6 fw-semibold">12 478 ₸ </p>
+                    </div>
+                </div>
+            </div>
+            <div class="header__toolbar-mobile">
+                <div class="toolbar-mobile__item">
+                    <img src="img/icons/catalog-black.svg">
+                    <h5>Каталог</h5>
+                </div>
+                <div class="toolbar-mobile__vertical"></div>
+                <div class="toolbar-mobile__item">
+                    <img src="img/icons/search-black.svg">
+                    <h5>Поиск</h5>
+                </div>
+            </div>
+        </div>
+        <div class="header__dividing w-100 bg-grey-1 op-2"></div>
+        <div class="container">
+            <div class="menu-mobile">
+                <div class="menu-mobile__contacts">
+                    <div class="contacts-item">
+                        <img src="img/icons/point.svg">
+                        <p class="header-contacts__content">г. Кокчетав, ул. Ж. Ташенова 129Б<br><span>(Рынок Восточный)</span></p>
+                    </div>
+                    <div class="contacts-item">
+                        <img src="img/icons/mail.svg">
+                        <p class="header-contacts__content">
+                            <a href="mailto:opt.sultan@mail.ru">opt.sultan@mail.ru</a>
+                            <br>
+                            <span>На связи в любое время</span>
+                        </p>
+                    </div>
+                    <div class="contacts-item">
+                        <img src="img/icons/phone.svg">
+                        <p class="header-contacts__content">
+                            Отдел продаж
+                            <br>
+                            <span>+7 (777) 490-00-91</span>
+                        </p>
+                    </div>
+                    <div class="contacts-item simple">
+                        <p>
+                            <span>время работы: 9:00-20:00</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-mobile__request-call">
+                    <button class="btn small"><img src="img/icons/phone-white.svg"></button>
+                    <a href="#">Заказать звонок</a>
+                </div>
+                <div class="menu-mobile__horizontal"></div>
+                <div class="main-menu">
+                    <h4 class="main-menu__title">Меню сайта:</h4>
+                    <ul class="main-menu__list">
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Возврат</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="price-list">
+                    <button class="btn price">
+                        Прайс-лист
+                        <img src="img/icons/price-list.svg">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-modal"></div>
+    <main>
+        <div class="container">
+            <div class="ordering"></div>
+            <div class="ordering-form d-flex j-content a-items">
+                <div class="ordering-form__content p-m-6">
+                    <div class="d-flex j-content-end mb-m-12"><i class="i-modal-close"></i></div>
+                    <div class="d-flex j-content mb-l-3">
+                        <div class="btn icon"><i class="i-double-check"></i></div>
+                    </div>
+                    <div class="d-flex j-content mb-m-4">
+                        <p class="h1 fw-mediumbold lh-2 c-grey-2 tt-uc">Спасибо за заказ</p>
+                    </div>
+                    <div class="d-flex j-content">
+                        <p class="fs-5 fw-light lh-2 c-grey-1">Наш менеджер свяжется с вами в ближайшее время</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-m-5 mb-m-10 fs-3">
+                <a href="#" class="d-inline-block fw-light lh-2 pr-m-2 b-right-3">Главная</a>
+                <a href="#" class="d-inline-block fw-light lh-2 pl-m-2 op-5">Корзина</a>
+            </div>
+            <h1 class="h1 fw-mediumbold lh-2 tt-uc c-grey-2 mb-m-10">Корзина</h1>
+            <div class="w-100 b-horizontal"></div>
+            <div class="d-flex j-content-sb a-items py-m-10">
+                <div class="basket-product-img" style="background-image: url(img/products/product_01.png)"></div>
+                <div class="basket-product-info d-flex f-direct j-content a-items-start ml-m-4 mr-m-24">
+                    <div class="product__weight dimen-ml c-grey-1 fw-normal fs-2 lh-4">450 мл</div>
+                    <h2 class="h2 fw-bold lh-6 c-grey-2 py-m-2">AOS средство для мытья посуды Crystal</h2>
+                    <p class="fs-2 fw-light lh-6 c-grey-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. </p>
+                </div>
+                <div class="d-flex j-content-sb a-items">
+                    <div class="b-left-2" style="height: 60px"></div>
+                    <div class="px-s-14">
+                        <div class="d-flex j-content-sb a-items f-g-2">
+                            <button class="btn basket fs-2 fw-light c-grey-1">+</button>
+                            <span class="fs-3 fw-mediumbold lh-4 c-grey-1">1</span>
+                            <button class="btn basket fs-2 fw-light c-grey-1">-</button>
+                        </div>
+                    </div>
+                    <div class="b-left-2" style="height: 60px"></div>
+                    <div class="basket-product-price px-s-14">
+                        <p class="h2 fw-bolder lh-4 c-grey-2">48,76 ₸</p>
+                    </div>
+                    <div class="b-left-2" style="height: 60px"></div>
+                    <div class="pl-s-14">
+                        <button class="btn small fs-3 lh-2 fw-bold" style="padding: 17px">
+                            <i class="i-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 b-horizontal"></div>
+            <div class="d-flex j-content-sb a-items py-m-10">
+                <div class="basket-product-img" style="background-image: url(img/products/product_02.png)"></div>
+                <div class="basket-product-info d-flex f-direct j-content a-items-start ml-m-4 mr-m-24">
+                    <div class="product__weight dimen-ml c-grey-1 fw-normal fs-2 lh-4">450 мл</div>
+                    <h2 class="h2 fw-bold lh-6 c-grey-2 py-m-2">AOS средство для мытья посуды Crystal</h2>
+                    <p class="fs-2 fw-light lh-6 c-grey-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. </p>
+                </div>
+                <div class="d-flex j-content-sb a-items">
+                    <div class="b-left-2" style="height: 60px"></div>
+                    <div class="px-s-14">
+                        <div class="d-flex j-content-sb a-items f-g-2">
+                            <button class="btn basket fs-2 fw-light c-grey-1">+</button>
+                            <span class="fs-3 fw-mediumbold lh-4 c-grey-1">1</span>
+                            <button class="btn basket fs-2 fw-light c-grey-1">-</button>
+                        </div>
+                    </div>
+                    <div class="b-left-2" style="height: 60px"></div>
+                    <div class="basket-product-price px-s-14">
+                        <p class="h2 fw-bolder lh-4 c-grey-2">48,76 ₸</p>
+                    </div>
+                    <div class="b-left-2" style="height: 60px"></div>
+                    <div class="pl-s-14">
+                        <button class="btn small fs-3 lh-2 fw-bold" style="padding: 17px">
+                            <i class="i-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 b-horizontal"></div>
+            <div class="d-flex j-content-sb a-items py-m-10">
+                <div class="basket-product-img" style="background-image: url(img/products/product_03.png)"></div>
+                <div class="basket-product-info d-flex f-direct j-content a-items-start ml-m-4 mr-m-24">
+                    <div class="product__weight dimen-ml c-grey-1 fw-normal fs-2 lh-4">450 мл</div>
+                    <h2 class="h2 fw-bold lh-6 c-grey-2 py-m-2">AOS средство для мытья посуды Crystal</h2>
+                    <p class="fs-2 fw-light lh-6 c-grey-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. </p>
+                </div>
+                <div class="d-flex j-content-sb a-items">
+                    <div class="b-left-2" style="height: 60px"></div>
+                    <div class="px-s-14">
+                        <div class="d-flex j-content-sb a-items f-g-2">
+                            <button class="btn basket fs-2 fw-light c-grey-1">+</button>
+                            <span class="fs-3 fw-mediumbold lh-4 c-grey-1">1</span>
+                            <button class="btn basket fs-2 fw-light c-grey-1">-</button>
+                        </div>
+                    </div>
+                    <div class="b-left-2" style="height: 60px"></div>
+                    <div class="basket-product-price px-s-14">
+                        <p class="h2 fw-bolder lh-4 c-grey-2">48,76 ₸</p>
+                    </div>
+                    <div class="b-left-2" style="height: 60px"></div>
+                    <div class="pl-s-14">
+                        <button class="btn small fs-3 lh-2 fw-bold" style="padding: 17px">
+                            <i class="i-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 b-horizontal mb-m-10"></div>
+            <div class="d-flex j-content-sb a-items mb-m-20">
+                <button class="btn medium fs-3 lh-2 fw-bold py-m-4 px-m-7">
+                    Оформить заказ
+                </button>
+                <p class="h2 fw-bolder lh-4">48,76 ₸</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-container d-flex j-content-sb a-items-start c-white">
+                <div class="footer-about d-flex f-direct j-content a-items-start">
+                    <div class="d-flex j-content a-items">
+                        <a href="#">
+                            <i class="i-logo-wh"></i>
+                        </a>
+                        <button class="btn price">
+                            Прайс-лист
+                            <i class="i-price-list"></i>
+                        </button>
+                    </div>
+                    <p class="footer-about__content mt-s-5 mb-m-9 fs-4 fw-normal lh-6">
+                        Компания «Султан» — снабжаем розничные магазины товарами<br>
+                        "под ключ" в Кокчетаве и Акмолинской области
+                    </p>
+                    <p class="mb-m-3 fs-2 fw-normal lh-6">Подпишись на скидки и акции</p>
+                    <div class="input-subscription">
+                        <input placeholder="Введите ваш E-mail">
+                        <button class="btn small"><i class="i-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div class="footer-menu">
+                    <div class="footer-wrapper">
+                        <h4 class="mb-m-5 fs-5 fw-mediumbold lh-6 c-white">Меню сайта:</h4>
+                        <ul class="footer-list fs-3 fw-normal lh-6 c-white">
+                            <li class="mb-m-4"><a href="#">О компании</a></li>
+                            <li class="mb-m-4"><a href="#">Доставка и оплата</a></li>
+                            <li class="mb-m-4"><a href="#">Возврат</a></li>
+                            <li class="mb-m-4"><a href="#">Контакты</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-catalog">
+                    <h4 class="mb-m-5 fs-5 fw-mediumbold lh-6 c-white">Категории:</h4>
+                    <ul class="footer-list fs-3 fw-normal lh-6 c-white">
+                        <li class="mb-m-4"><a href="#">Бытовая химия</a></li>
+                        <li class="mb-m-4"><a href="#">Косметика и гигиена</a></li>
+                        <li class="mb-m-4"><a href="#">Товары для дома</a></li>
+                        <li class="mb-m-4"><a href="#">Товары для детей и мам</a></li>
+                        <li><a href="#">Посуда</a></li>
+                    </ul>
+                </div>
+                <div class="footer-price-list">
+                    <h4 class="mb-m-5 fs-5 fw-mediumbold lh-6">Скачать прайс-лист:</h4>
+                    <button class="btn price">
+                        Прайс-лист
+                        <i class="i-price-list"></i>
+                    </button>
+                    <p class="mt-m-4 mb-m-3 fs-3 fw-normal lh-6">Связь в мессенджерах:</p>
+                    <div class="d-flex j-content-start a-items">
+                        <i class="i-whatsapp mr-m-2"></i>
+                        <i class="i-telegram"></i>
+                    </div>
+                </div>
+                <div class="footer-contacts">
+                    <div class="footer-wrapper">
+                        <h4 class="mb-m-5 fs-5 fw-mediumbold lh-6">Контакты:</h4>
+                        <div class="mb-m-5">
+                            <p class="mb-m-1 fs-3 fw-semibold lh-6">+7 (777) 490-00-91</p>
+                            <p class="mb-m-1 fs-2 fw-light lh-6">время работы: 9:00-20:00</p>
+                            <a href="#" class="fs-1 fw-bold lh-6 tdl-u">Заказать звонок</a>
+                        </div>
+                        <div class="mb-m-5">
+                            <p class="fs-3 fw-semibold lh-4">
+                                <a href="mailto:opt.sultan@mail.ru">opt.sultan@mail.ru</a>
+                                <br>
+                                <span class="fs-2 fw-light lh-4">На связи в любое время</span>
+                            </p>
+                        </div>
+                        <div class="d-flex j-content-start a-items">
+                            <i class="i-visa mr-m-1"></i>
+                            <i class="i-master-card"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

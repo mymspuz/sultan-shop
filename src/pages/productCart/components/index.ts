@@ -1,0 +1,6 @@
+export { default as BreadCrumbs } from '../../../components/BreadCrumbs'
+export { default as ProductImg } from './ProductImg'
+export { default as ProductBasket } from './ProductBasket'
+export { default as ProductMarket } from './ProductMarket'
+export { default as ProductAbout } from './ProductAbout'
+export { default as ProductCharacter } from './ProductCharacter'
