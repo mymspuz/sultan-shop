@@ -22,7 +22,7 @@ const MainRouter: FC = () => {
                     <Route path='basket' element={<BasketPage />} />
                 </Route>
                 <Route element={<AdminLayout />}>
-                    <Route path='/admin' element={<AdminPage />} />
+                    <Route path='admin' element={<AdminPage />} />
                 </Route>
                 <Route path='*' element={<h1>ErrorPage</h1>} />
             </Routes>

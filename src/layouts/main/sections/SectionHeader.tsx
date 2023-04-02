@@ -13,15 +13,15 @@ const SectionHeader: FC = () => {
 
     const [openMobile, setOpenMobile] = useState<boolean>(false)
 
-    useEffect(() => {
-        if (openMobile) {
-            document.body.classList.add('bg-modal')
-
-            return () => {
-                document.body.classList.remove('bg-modal')
-            }
-        }
-    }, [openMobile])
+    // useEffect(() => {
+    //     if (openMobile) {
+    //         document.body.classList.add('bg-modal')
+    //
+    //         return () => {
+    //             document.body.classList.remove('bg-modal')
+    //         }
+    //     }
+    // }, [openMobile])
 
     return (
         <header className="d-flex f-direct j-content-start">
