@@ -1,7 +1,7 @@
 {
   "name": "sultan",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://mymspuz.github.io/sultan-shop/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
