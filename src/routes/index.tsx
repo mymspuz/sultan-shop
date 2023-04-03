@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, HashRouter } from 'react-router-dom'
 
 import { MainLayout, AdminLayout } from '../layouts'
 import { CatalogPage, ProductPage, BasketPage, AdminPage } from '../pages'
@@ -14,7 +14,7 @@ const MainRouter: FC = () => {
     if (basket) dispatch(basketSet(basket))
 
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route path='/' element={<MainLayout />}>
                     <Route index element={<CatalogPage />} />
@@ -26,7 +26,7 @@ const MainRouter: FC = () => {
                 </Route>
                 <Route path='*' element={<h1>ErrorPage</h1>} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 
