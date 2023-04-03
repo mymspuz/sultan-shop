@@ -1,10 +1,46 @@
 {
   "files": {
-    "main.js": "/static/js/main.dbfa6169.js",
+    "main.css": "/static/css/main.8cac57d1.css",
+    "main.js": "/static/js/main.11e5ce21.js",
+    "static/media/logo-black.svg": "/static/media/logo-black.787b66ae53c72b91732b.svg",
+    "static/media/logo-white.svg": "/static/media/logo-white.18600ba6450c54512a99.svg",
+    "static/media/master-card.svg": "/static/media/master-card.b5c9845f0b4d0b0e15c1.svg",
+    "static/media/whatsapp.svg": "/static/media/whatsapp.db4fdea63d5ac10f8039.svg",
+    "static/media/basket-white.svg": "/static/media/basket-white.5511e0f24aba33a330a5.svg",
+    "static/media/basket.svg": "/static/media/basket.a5d100d0100f4885c179.svg",
+    "static/media/trash.svg": "/static/media/trash.52dd0ca00a7578f6d0c5.svg",
+    "static/media/visa.svg": "/static/media/visa.912ddfd920ef10b1e88d.svg",
+    "static/media/share.svg": "/static/media/share.c7ea557134a8977c1abb.svg",
+    "static/media/modal-close.svg": "/static/media/modal-close.ba6fc45b1c4861388bc5.svg",
+    "static/media/mail.svg": "/static/media/mail.5018676c2b55308960ea.svg",
+    "static/media/bottle.svg": "/static/media/bottle.8954951c94a03caba659.svg",
+    "static/media/phone-white.svg": "/static/media/phone-white.4fdc816fceed208c6b26.svg",
+    "static/media/box-open.svg": "/static/media/box-open.3daf02ca5bcf43434fd3.svg",
+    "static/media/telegram.svg": "/static/media/telegram.dcb86d5e3c8bccf97888.svg",
+    "static/media/phone.svg": "/static/media/phone.e74ed3e8a20e93f90d9e.svg",
+    "static/media/point.svg": "/static/media/point.205123e38262c7b921aa.svg",
+    "static/media/catalog-bl.svg": "/static/media/catalog-bl.1928cbd9b07950bf3fa5.svg",
+    "static/media/catalog.svg": "/static/media/catalog.4756189f8fb2f4cdf0b3.svg",
     "index.html": "/index.html",
-    "main.dbfa6169.js.map": "/static/js/main.dbfa6169.js.map"
+    "static/media/search.svg": "/static/media/search.246c18fcc20fbd4f2ed3.svg",
+    "static/media/search-black.svg": "/static/media/search-black.2e7579ec4d7e4d74ea02.svg",
+    "static/media/edit.svg": "/static/media/edit.561e0302e31b4f5d7149.svg",
+    "static/media/double-check.svg": "/static/media/double-check.37f3bc180890ba89fe77.svg",
+    "static/media/mobile-menu-close.svg": "/static/media/mobile-menu-close.c19f573b2af452b55dcb.svg",
+    "static/media/mobile-menu-open.svg": "/static/media/mobile-menu-open.0480c82a6509521d2325.svg",
+    "static/media/price-list-bl.svg": "/static/media/price-list-bl.11d3238f37bdb4da06fd.svg",
+    "static/media/price-list.svg": "/static/media/price-list.e7871a54009d32c25a9d.svg",
+    "static/media/pag-prev.svg": "/static/media/pag-prev.8009929457bde0328f8f.svg",
+    "static/media/pag-next.svg": "/static/media/pag-next.93ba4abe5846a231d455.svg",
+    "static/media/arrow-right.svg": "/static/media/arrow-right.35ab94e2f8817f324bd3.svg",
+    "static/media/arrow-down-bl.svg": "/static/media/arrow-down-bl.90a0847e2609fe35eb18.svg",
+    "static/media/arrow-left-bl.svg": "/static/media/arrow-left-bl.5a3ebbf524233ddda3e3.svg",
+    "static/media/arrow-up-bl.svg": "/static/media/arrow-up-bl.80566af4e2a61f1f1d7b.svg",
+    "main.8cac57d1.css.map": "/static/css/main.8cac57d1.css.map",
+    "main.11e5ce21.js.map": "/static/js/main.11e5ce21.js.map"
   },
   "entrypoints": [
-    "static/js/main.dbfa6169.js"
+    "static/css/main.8cac57d1.css",
+    "static/js/main.11e5ce21.js"
   ]
 }
