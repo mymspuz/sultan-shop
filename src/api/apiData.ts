@@ -1,12 +1,9 @@
-import { IManufacturer, IProduct, ITypesCare } from '../models/catalog'
 import dataProducts from '../data/products.json'
 import dataManufactures from '../data/manufactures.json'
 import dataTypesOfCare from '../data/typesCare.json'
-import { getProductsLocalStorage } from '../utils/localStorage'
 
-const products: IProduct[] = getProducts()
-const typesOfCare: ITypesCare[] = dataTypesOfCare.typesCare
-const manufacturers: IManufacturer[] = dataManufactures.manufacture
+import { IManufacturer, IProduct, ITypesCare } from '../models/catalog'
+import { getProductsLocalStorage } from '../utils/localStorage'
 
 type TFilter = {
     typesCare: number []
@@ -14,21 +11,19 @@ type TFilter = {
     manufacturers: number []
 }
 
-export function getProducts(): IProduct[] {
-    const data = getProductsLocalStorage()
-    if (data) return data
-    return dataProducts.products
-}
+// Загружаем тестовые данные из файлов
+const data = getProductsLocalStorage()
+const products: IProduct[] = data ? data : dataProducts.products
+const typesOfCare: ITypesCare[] = dataTypesOfCare.typesCare
+const manufacturers: IManufacturer[] = dataManufactures.manufacture
 
-export const getProduct = (id: number): IProduct | null => {
-    const product = products.filter(p => p.id === id)
-    return product.length ? product[0] : null
-}
-
+// Запрос на получение нового ID
 export const getNewId = (): number => products.length ? products[products.length - 1].id + 1 : 1
-
-export const getFiltersProducts = (filter: TFilter): IProduct[] => {
-    const filterProducts: IProduct [] = []
+// Запрашиваем список всех продуктов
+export const getProducts = (): Promise<IProduct[]> => new Promise(resolve => setTimeout(() => resolve(products), 500))
+// Запрашиваем продукты, которые удовлетворяют текущему фильтру
+const filterProducts = (filter: TFilter): IProduct[] => {
+    const filterProducts:IProduct [] = []
     products.forEach(product => {
         let result: boolean = true
         // Проверка категорий
@@ -51,25 +46,21 @@ export const getFiltersProducts = (filter: TFilter): IProduct[] => {
     })
     return filterProducts
 }
-
-export const getTypesCare = (): ITypesCare[] => typesOfCare
-
-export const getManufacturers = (): IManufacturer[] => manufacturers
-
-export const getManufacturerName = (id: number): string => {
-    const manufacturer = manufacturers.filter(m => m.id === id)
-    return manufacturer.length ? manufacturer[0].name : ''
-}
-
-export const getManufactureCount = (selected: number[]): IManufacturer[] => {
-    return manufacturers.map(m => {
-        m.count = products.reduce(
-            (acc, product) => {
-                let inc = 0
-                if (m.id === product.manufacturer) inc = 1
-                return acc + inc
-            }, 0)
-        m.select = selected.includes(m.id)
-        return m
-    })
-}
+export const getFiltersProducts = (filter: TFilter): Promise<IProduct[]> => new Promise(resolve => setTimeout(() => resolve(filterProducts(filter)), 500))
+// Запрос на получение типов ухода
+export const getTypesCare = (): Promise<ITypesCare[]> => new Promise(resolve => setTimeout(() => resolve(typesOfCare), 1000))
+// Запрос на получение производителей с подсчетом товаров в каждом из них
+export const getManufactureCount = (): Promise<IManufacturer[]> => new Promise(resolve =>
+    setTimeout(() => resolve(
+        manufacturers.map(m => {
+            const result = {...m}
+            result.count = products.reduce(
+                (acc, product) => {
+                    let inc = 0
+                    if (m.id === product.manufacturer) inc = 1
+                    return acc + inc
+                }, 0)
+            return result
+        })
+    ), 800)
+)

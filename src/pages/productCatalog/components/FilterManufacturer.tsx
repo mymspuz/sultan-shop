@@ -1,17 +1,19 @@
-import React, {FC, useEffect, useState} from 'react'
-import {IManufacturer} from "../../../models/catalog";
-import {useAppSelector} from "../../../store/hooks";
+import React, { FC, useEffect, useState } from 'react'
+
+import { IManufacturer } from '../../../models/catalog'
+import { useAppSelector } from '../../../store/hooks'
+import { Loader } from './index'
 
 type TProps = {
-    listManufacturers: IManufacturer[]
     change: (id: number) => void
 }
-const FilterManufacturer: FC<TProps> = ({ listManufacturers, change }: TProps) => {
+const FilterManufacturer: FC<TProps> = ({ change }: TProps) => {
 
+    const listManufacturers = useAppSelector(state => state.manufacturers)
     const currentSelect: number[] = useAppSelector(state => state.products.filter.manufacturers)
 
     const [viewAll, setViewAll] = useState<boolean>(false)
-    const [manufacturers, setManufacturers] = useState<IManufacturer[]>(listManufacturers)
+    const [manufacturers, setManufacturers] = useState<IManufacturer[]>([])
     const [search, setSearch] = useState<string>('')
     const setVisible = () => {
         let count: number = 0
@@ -25,23 +27,10 @@ const FilterManufacturer: FC<TProps> = ({ listManufacturers, change }: TProps) =
             } else {
                 m.visible = false
             }
-
             return m
         })
         setManufacturers(list)
     }
-
-    useEffect(() => {
-        setVisible()
-    }, [viewAll])
-
-    useEffect(() => {
-        const list: IManufacturer[] = manufacturers.map(m => {
-            m.select = currentSelect.includes(m.id)
-            return m
-        })
-        setManufacturers(list)
-    }, [])
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>): void => {
         if (e.key === 'Enter') setVisible()
@@ -55,6 +44,21 @@ const FilterManufacturer: FC<TProps> = ({ listManufacturers, change }: TProps) =
         setManufacturers(list)
         change(id)
     }
+
+    useEffect(() => {
+        setVisible()
+    }, [viewAll])
+
+    useEffect(() => {
+        if (!listManufacturers.isLoading) {
+            const list: IManufacturer[] = listManufacturers.manufacturers.map(m => {
+                const result = {...m}
+                result.select = currentSelect.includes(m.id)
+                return result
+            })
+            setManufacturers(list)
+        }
+    }, [listManufacturers])
 
     return (
         <div className="mt-m-6">
@@ -70,7 +74,7 @@ const FilterManufacturer: FC<TProps> = ({ listManufacturers, change }: TProps) =
             </div>
 
             <fieldset className="mt-m-3">
-                {manufacturers && manufacturers.map(manufacturer => (
+                {!manufacturers.length ? <Loader /> : manufacturers.map(manufacturer => (
                     <div key={manufacturer.id} hidden={!manufacturer.visible} className="mb-m-1">
                         <input
                             type="checkbox"

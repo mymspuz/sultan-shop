@@ -6,9 +6,12 @@ import {
     CatalogTypeFilterHead,
     FilterPrice,
     FilterManufacturer,
-    CatalogTypeFilterSideBar, CatalogProduct, CatalogCategoryDesc, CatalogProductPagination
+    CatalogTypeFilterSideBar,
+    CatalogProduct,
+    CatalogCategoryDesc,
+    CatalogProductPagination, Loader
 } from './components'
-import { ICrumb, IManufacturer, IProduct, ISort } from '../../models/catalog'
+import {ICrumb, IProduct, ISort } from '../../models/catalog'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import {
     setStoreClearFilter,
@@ -18,7 +21,7 @@ import {
     setStoreSort
 } from '../../store/slice/productSlice'
 import { basketAdd } from '../../store/slice/basketSlice'
-import { getFiltersProducts, getManufactureCount, getTypesCare } from '../../api/apiData'
+import { getFiltersProducts } from '../../api/apiData'
 
 type TSelectedFilter = {
     price: {
@@ -35,17 +38,13 @@ const ProductCatalogPage: FC = () => {
         {name: 'Каталог', link: '#', isActive: true}
     ]
 
-    const typesOfCare = getTypesCare()
-
     const dispatch = useAppDispatch()
 
     const [products, setProducts] = useState<IProduct[]>([])
-
+    const [isLoading, setIsLoading] = useState<boolean>(false)
     const [open, setOpen] = useState<boolean>(true)
 
     const stateProducts = useAppSelector(state => state.products)
-
-    const manufacturers: IManufacturer[] = getManufactureCount(stateProducts.filter.manufacturers)
 
     const selectedFilter: TSelectedFilter = {
         price: {
@@ -96,9 +95,13 @@ const ProductCatalogPage: FC = () => {
     const changePagination = (num: number): void => {
         dispatch(setStorePageNum(num))
     }
-
+    // Получаем отфильтрованные продукты
     useEffect(() => {
-        dispatch(setStoreProducts(getFiltersProducts(stateProducts.filter)))
+        setIsLoading(true)
+        getFiltersProducts(stateProducts.filter).then(data => {
+            dispatch(setStoreProducts(data))
+            setIsLoading(false)
+        })
     }, [stateProducts.filter])
 
     useEffect(() => {
@@ -124,7 +127,7 @@ const ProductCatalogPage: FC = () => {
                     <h1 className="h1 fw-mediumbold lh-2 tt-uc c-grey-2">Косметика и гигиена</h1>
                     <CatalogSort change={changeSort} notMobile={true} />
                 </div>
-                <CatalogTypeFilterHead types={typesOfCare} change={changeFilterTypes} />
+                {<CatalogTypeFilterHead change={changeFilterTypes} />}
                 <div className="catalog-content d-flex j-content-sb a-items-start">
                     <div className="catalog-sidebar">
                         <div className="catalog-filter mt-m-4">
@@ -137,7 +140,7 @@ const ProductCatalogPage: FC = () => {
                             {open &&
                                 <>
                                 <FilterPrice change={changeFilterPriceRange} />
-                                <FilterManufacturer listManufacturers={manufacturers} change={changeFilterManufacturers} />
+                                <FilterManufacturer change={changeFilterManufacturers} />
                                 <div className="d-flex j-content-sb a-items mb-m-3">
                                     <button
                                         className="btn medium fs-3 lh-2 fw-bold py-s-7 px-s-17"
@@ -155,12 +158,12 @@ const ProductCatalogPage: FC = () => {
                                 </div>
                                 </>
                             }
-                            <CatalogTypeFilterSideBar types={typesOfCare} change={changeFilterTypes} />
+                            <CatalogTypeFilterSideBar change={changeFilterTypes} />
                         </div>
                     </div>
                     <div className="catalog-products d-flex f-direct j-content-start">
                         <div className="products-list d-flex j-content-start a-items f-wrap">
-                            {products && products.map(
+                            {isLoading ? <Loader /> : products && products.map(
                                 product =>
                                     <CatalogProduct
                                         key={product.id}

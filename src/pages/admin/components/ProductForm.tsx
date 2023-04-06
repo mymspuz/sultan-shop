@@ -1,7 +1,10 @@
 import React, { FC, useEffect, useState } from 'react'
 
 import { IProduct } from '../../../models/catalog'
-import { getManufacturers, getNewId, getTypesCare } from '../../../api/apiData'
+import { getNewId } from '../../../api/apiData'
+import {useAppDispatch, useAppSelector} from '../../../store/hooks'
+import Loader from '../../../components/Loader'
+import {setManufacturerCount} from "../../../store/slice/manufacturersSlice";
 
 type TProps = {
     product: IProduct | null
@@ -31,9 +34,9 @@ const ProductForm: FC<TProps> = ({ product, close, apply }: TProps) => {
 
     const [isValid, setIsValid] = useState<boolean>(false)
 
-    const manufacturers = getManufacturers()
+    const manufacturers = useAppSelector(state => state.manufacturers)
 
-    const typesOfCare = getTypesCare()
+    const types = useAppSelector(state => state.typesOfCare)
 
     const allowInput = (value: string, zero: boolean = false): boolean =>
         zero ? (!value || (!isNaN(Number(value)) && Number(value) > -1)) : (!value || (!isNaN(Number(value)) && Number(value) > 0))
@@ -80,7 +83,7 @@ const ProductForm: FC<TProps> = ({ product, close, apply }: TProps) => {
         <div className="modal-form d-flex j-content a-items" style={{ top: window.scrollY }}>
             <div className="product-form p-m-6">
                 <div className={'d-flex j-content'} style={{ height: '100px' }}>
-                    {state.img && <img src={`${process.env.PUBLIC_URL}/${state.img}`} />}
+                    {state.img && <img src={`${process.env.PUBLIC_URL}/${state.img}`} alt='' />}
                 </div>
                 <div className={'d-flex j-content mt-m-4'}>
                     <select
@@ -165,7 +168,7 @@ const ProductForm: FC<TProps> = ({ product, close, apply }: TProps) => {
                         onChange={e => setState({...state, manufacturer: Number(e.target.value)})}
                     >
                         <option value="">Выберите производителя</option>
-                        {manufacturers && manufacturers.map(m => <option key={m.id} value={m.id}>{m.name}</option>)}
+                        {manufacturers.isLoading ? <Loader /> : manufacturers.manufacturers.map(m => <option key={m.id} value={m.id}>{m.name}</option>)}
                     </select>
                     <input
                         className={'form-control'}
@@ -188,7 +191,7 @@ const ProductForm: FC<TProps> = ({ product, close, apply }: TProps) => {
                         onChange={e => setState({...state, typesCare: Array.from(e.target.selectedOptions, (item) => item.value)})}
                     >
                         <option value="">Выберите типы ухода</option>
-                        {typesOfCare && typesOfCare.map(t => <option key={t.id} value={t.id}>{t.name}</option>)}
+                        {types.isLoading ? <Loader /> : types.typesOfCare.map(t => <option key={t.id} value={t.id}>{t.name}</option>)}
                     </select>
                     <input
                         className={'form-control'}
@@ -229,4 +232,4 @@ const ProductForm: FC<TProps> = ({ product, close, apply }: TProps) => {
     )
 }
 
-export default ProductForm;
+export default ProductForm

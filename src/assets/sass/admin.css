@@ -1,0 +1,18 @@
+.admin-product-img {
+  min-height: 81px;
+  min-width: 101px;
+  max-height: 81px;
+  max-width: 101px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.product-form {
+  min-width: 400px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+/*# sourceMappingURL=admin.css.map */

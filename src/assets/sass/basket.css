@@ -1,0 +1,39 @@
+.ordering-form-content {
+  height: 425px;
+  width: 735px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  z-index: 101;
+}
+
+.basket-product-img {
+  min-height: 191px;
+  min-width: 281px;
+  max-height: 191px;
+  max-width: 281px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.basket-product-info {
+  width: 480px;
+}
+@media only screen and (max-width: 960px) {
+  .basket-product-info {
+    width: auto;
+    margin-left: 0;
+  }
+}
+
+.basket-product-price {
+  min-width: 201px;
+}
+@media only screen and (max-width: 960px) {
+  .basket-product-price {
+    min-width: 10px;
+    width: auto;
+  }
+}
+
+/*# sourceMappingURL=basket.css.map */

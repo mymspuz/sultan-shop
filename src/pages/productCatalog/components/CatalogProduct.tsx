@@ -1,12 +1,11 @@
-import React, {FC, useEffect, useState} from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { IProduct } from '../../../models/catalog'
 import { useAppSelector } from '../../../store/hooks'
-import { getManufacturerName } from '../../../api/apiData'
-import {getFirstWord, getPrice, getWithoutFirstWord} from "../../../utils/utilsStr";
-import ProductWeight from "../../../components/ProductWeight";
-import * as fs from "fs";
+import { getFirstWord, getPrice, getWithoutFirstWord } from '../../../utils/utilsStr'
+import ProductWeight from '../../../components/ProductWeight'
+import useManufacturerName from "../../../hooks/useManufacturerName";
 
 type TProps = {
     product: IProduct
@@ -15,6 +14,8 @@ type TProps = {
 const CatalogProduct: FC<TProps> = ({ product, addBasket }: TProps) => {
 
     const stateBasket = useAppSelector(state => state.basket)
+
+    const manufacturerName = useManufacturerName(product.manufacturer)
 
     const [inBasket, setInBasket] = useState<boolean>(stateBasket.products.some(p => p.product.id === product.id))
 
@@ -43,7 +44,7 @@ const CatalogProduct: FC<TProps> = ({ product, addBasket }: TProps) => {
                 </li>
                 <li className="mt-m-1 fs-3 fw-mediumbold lh-6 c-grey-2">
                     <span className="d-inline-block mr-m-1 fw-light c-grey-1">Производитель:</span>
-                    {getManufacturerName(product.manufacturer)}
+                    {manufacturerName}
                 </li>
                 <li className="mt-m-1 fs-3 fw-mediumbold lh-6 c-grey-2">
                     <span className="d-inline-block mr-m-1 fw-light c-grey-1">Бренд:</span>

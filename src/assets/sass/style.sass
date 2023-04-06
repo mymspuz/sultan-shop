@@ -5,10 +5,10 @@
 @import 'mixins'
 @import 'icons'
 
-@import 'catalog'
+@import 'catalog.css'
 @import 'product'
-@import 'basket'
-@import 'admin'
+@import 'basket.css'
+@import 'admin.css'
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap')
 
@@ -100,7 +100,7 @@ header
         img
           height: 100%
           @media only screen and (max-width: $md)
-            height: 70%
+            height: 71%
       &__status
         height: 8px
         width: 8px
@@ -130,7 +130,7 @@ header
       h5
         margin-left: 3px
       &:hover
-        background-color: #EDEDED
+        background-color: $colorGrey-0
     .toolbar-mobile__vertical
       height: 30px
       width: 1px
@@ -153,7 +153,7 @@ header
       .contacts-item
         margin-top: 15px
         display: flex
-        justify-content: start
+        justify-content: flex-start
         align-items: center
         img
           width: 18px
@@ -161,10 +161,10 @@ header
           margin-left: 18px
           font: 600 1.17em/130% $fontPrimary
         a
-          color: #111111
+          color: $colorGrey-2
           font: 600 1em/120% $fontPrimary
         span
-          color: #3F4E65
+          color: $colorGrey-1
           font: 300 0.85em/116% $fontPrimary
         &.simple
           margin-top: 0
@@ -175,12 +175,12 @@ header
     &__request-call
       margin-top: 13px
       display: flex
-      justify-content: start
+      justify-content: flex-start
       align-items: center
       .btn
         margin-right: 7px
       a
-        color: #3F4E65
+        color: $colorGrey-1
         font: 400 10px/150% $fontPrimary
         text-decoration-line: underline
     &__horizontal
@@ -190,7 +190,7 @@ header
       margin: 25px 0
     .main-menu
       font-size: 12px
-      color: #3F4E65
+      color: $colorGrey-1
       margin-bottom: 22px
       &__title
         font: 600 1.67em/150% $fontPrimary
@@ -238,7 +238,7 @@ header
   //top: 102px
   left: 0
   z-index: 5
-  background-color: #111111
+  background-color: $colorGrey-2
   opacity: 0.5
   width: 100%
   height: 100vh
@@ -289,8 +289,8 @@ footer
         flex-basis: 50%
         display: flex
         flex-direction: column
-        align-items: end
-        justify-content: start
+        align-items: flex-end
+        justify-content: flex-start
         padding-right: 12px
         margin-bottom: 25px
     .footer-catalog
@@ -299,8 +299,8 @@ footer
         flex-basis: 50%
         display: flex
         flex-direction: column
-        align-items: start
-        justify-content: start
+        align-items: flex-start
+        justify-content: flex-start
         padding-left: 12px
         margin-bottom: 25px
     .footer-price-list
@@ -309,8 +309,8 @@ footer
         flex-basis: 50%
         display: flex
         flex-direction: column
-        align-items: start
-        justify-content: start
+        align-items: flex-start
+        justify-content: flex-start
         padding-left: 12px
         margin-top: 30px
         .btn.price
@@ -323,6 +323,6 @@ footer
         order: 4
         display: flex
         flex-direction: column
-        align-items: end
-        justify-content: start
+        align-items: flex-end
+        justify-content: flex-start
         padding-right: 12px

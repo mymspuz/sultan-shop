@@ -1,7 +1,8 @@
 import React, {FC, useState} from 'react'
-import {IProduct} from "../../../models/catalog";
-import {getManufacturerName} from "../../../api/apiData";
-import {addZero} from "../../../utils/utilsStr";
+
+import { IProduct } from '../../../models/catalog'
+import { addZero } from '../../../utils/utilsStr'
+import useManufacturerName from '../../../hooks/useManufacturerName'
 
 type TProps = {
     product: IProduct
@@ -10,11 +11,12 @@ type TProps = {
 const ProductAbout: FC<TProps> = ({ product }: TProps) => {
 
     const [open, setOpen] = useState<boolean>(true)
+    const manufacturerName = useManufacturerName(product.manufacturer)
 
     return (
         <>
             <ul className="mt-m-2 mb-m-6 fs-3 fw-light lh-6 c-grey-1 li-mb-5">
-                <li>Производитель:<span className="fw-mediumbold c-grey-2 ml-m-1">{getManufacturerName(product.manufacturer)}</span></li>
+                <li>Производитель:<span className="fw-mediumbold c-grey-2 ml-m-1">{manufacturerName}</span></li>
                 <li>Бренд:<span className="fw-mediumbold c-grey-2 ml-m-1">{product.brand}</span></li>
                 <li>Артикул:<span className="fw-mediumbold c-grey-2 ml-m-1">{addZero(product.id, 6)}</span></li>
                 <li>Штрихкод:<span className="fw-mediumbold c-grey-2 ml-m-1">{product.barcode}</span></li>
