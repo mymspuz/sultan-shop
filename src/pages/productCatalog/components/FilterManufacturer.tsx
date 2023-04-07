@@ -58,7 +58,7 @@ const FilterManufacturer: FC<TProps> = ({ change }: TProps) => {
             })
             setManufacturers(list)
         }
-    }, [listManufacturers])
+    }, [listManufacturers, currentSelect])
 
     return (
         <div className="mt-m-6">

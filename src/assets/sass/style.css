@@ -737,6 +737,11 @@ input {
   padding: 30px;
 }
 
+.px-s-10 {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
 .px-s-12 {
   padding-right: 36px;
   padding-left: 36px;

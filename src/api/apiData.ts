@@ -11,20 +11,24 @@ type TFilter = {
     manufacturers: number []
 }
 
+const getActualProducts = (): IProduct[] => {
+    const data = getProductsLocalStorage()
+    return data ? data : dataProducts.products
+}
+
 // Загружаем тестовые данные из файлов
-const data = getProductsLocalStorage()
-const products: IProduct[] = data ? data : dataProducts.products
+const products: IProduct[] = getActualProducts()
 const typesOfCare: ITypesCare[] = dataTypesOfCare.typesCare
 const manufacturers: IManufacturer[] = dataManufactures.manufacture
 
 // Запрос на получение нового ID
 export const getNewId = (): number => products.length ? products[products.length - 1].id + 1 : 1
 // Запрашиваем список всех продуктов
-export const getProducts = (): Promise<IProduct[]> => new Promise(resolve => setTimeout(() => resolve(products), 500))
+export const getProducts = (): Promise<IProduct[]> => new Promise(resolve => setTimeout(() => resolve(getActualProducts()), 500))
 // Запрашиваем продукты, которые удовлетворяют текущему фильтру
 const filterProducts = (filter: TFilter): IProduct[] => {
-    const filterProducts:IProduct [] = []
-    products.forEach(product => {
+    const filterProducts: IProduct [] = []
+    getActualProducts().forEach(product => {
         let result: boolean = true
         // Проверка категорий
         if (filter.typesCare.length) {

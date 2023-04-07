@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import { IProduct } from '../../models/catalog'
 import { IBasket } from '../../models/basket'
-import {setBasketLocalStorage} from "../../utils/localStorage";
+import { setBasketLocalStorage } from '../../utils/localStorage'
 
 const initialState: IBasket = {
     products: [],

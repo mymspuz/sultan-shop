@@ -8,6 +8,8 @@ export const addZero = (src: number, size: number): string => {
     return result
 }
 
+export const getImgPath = (id: number): string => `img/products/product_${addZero(id, 2)}.${id > 4 ? 'jpg' : 'png'}`
+
 export const getPrice = (src: number): string =>
     `${src.toLocaleString('ru-Ru', { minimumFractionDigits: 2 })} ${currentCurrency}`
 
