@@ -15,10 +15,11 @@ const FilterManufacturer: FC<TProps> = ({ change }: TProps) => {
     const [viewAll, setViewAll] = useState<boolean>(false)
     const [manufacturers, setManufacturers] = useState<IManufacturer[]>([])
     const [search, setSearch] = useState<string>('')
-    const setVisible = () => {
+    const setVisible = (src: IManufacturer[] | null = null) => {
         let count: number = 0
         const str = search.trim().toLowerCase()
-        const list: IManufacturer[] = manufacturers.map(m => {
+        let list = src ? [...src] : [...manufacturers]
+        list = list.map(m => {
             let isFind: number = 1
             if (str && !m.name.toLowerCase().includes(str)) isFind = 0
             count += isFind
@@ -56,7 +57,7 @@ const FilterManufacturer: FC<TProps> = ({ change }: TProps) => {
                 result.select = currentSelect.includes(m.id)
                 return result
             })
-            setManufacturers(list)
+            setVisible(list)
         }
     }, [listManufacturers, currentSelect])
 
@@ -67,10 +68,11 @@ const FilterManufacturer: FC<TProps> = ({ change }: TProps) => {
                 <input
                     placeholder="Поиск..."
                     value={search}
+                    data-testid={'field-filter-manufacturer'}
                     onChange={(e) => setSearch(e.target.value)}
                     onKeyDown={(e) => handleKeyDown(e)}
                 />
-                <button className="btn small" onClick={setVisible}><i className="i-search"></i></button>
+                <button className="btn small" onClick={() => setVisible}><i className="i-search"></i></button>
             </div>
 
             <fieldset className="mt-m-3">
@@ -79,6 +81,7 @@ const FilterManufacturer: FC<TProps> = ({ change }: TProps) => {
                         <input
                             type="checkbox"
                             id={`manufacture-${manufacturer.id}`}
+                            data-testid={`manufacture-${manufacturer.id}`}
                             name={`manufacture-${manufacturer.id}`}
                             className="custom-checkbox"
                             onChange={() => handlerChange(manufacturer.id)}
@@ -95,6 +98,7 @@ const FilterManufacturer: FC<TProps> = ({ change }: TProps) => {
                 className="mt-m-3 d-flex j-content-start a-items fs-2 fw-mediumbold lh-6 c-grey-1"
                 onClick={() => setViewAll(!viewAll)}
                 style={{cursor: 'pointer'}}
+                data-testid={'toggle-manufacturer'}
             >
                 Показать все
                 {!viewAll && <span className="ml-m-1 arrow-close"></span>}

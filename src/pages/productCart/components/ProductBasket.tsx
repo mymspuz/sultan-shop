@@ -44,14 +44,16 @@ const ProductBasket: FC<TProps> = ({ product, addBasket }: TProps) => {
                 <>
                 <div className="product-card-basket__count d-flex j-content-sb a-items">
                     <button
+                        data-testid={'basket-dec'}
                         className="btn basket fs-2 fw-light c-grey-1"
                         disabled={inBasket}
                         onClick={decQuantity}
                     >
                         -
                     </button>
-                    <span className="fs-3 fw-mediumbold lh-4 c-grey-1">{quantity}</span>
+                    <span className="fs-3 fw-mediumbold lh-4 c-grey-1" data-testid={'basket-count'}>{quantity}</span>
                     <button
+                        data-testid={'basket-inc'}
                         className="btn basket fs-2 fw-light c-grey-1"
                         disabled={inBasket}
                         onClick={incQuantity}

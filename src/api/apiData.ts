@@ -11,7 +11,7 @@ type TFilter = {
     manufacturers: number []
 }
 
-const getActualProducts = (): IProduct[] => {
+export const getActualProducts = (): IProduct[] => {
     const data = getProductsLocalStorage()
     return data ? data : dataProducts.products
 }
@@ -25,6 +25,13 @@ const manufacturers: IManufacturer[] = dataManufactures.manufacture
 export const getNewId = (): number => products.length ? products[products.length - 1].id + 1 : 1
 // Запрашиваем список всех продуктов
 export const getProducts = (): Promise<IProduct[]> => new Promise(resolve => setTimeout(() => resolve(getActualProducts()), 500))
+// Запрашиваем продукт по ID
+export const getProduct = (id: number): Promise<IProduct | null> => new Promise(function (resolve) {
+    setTimeout(() => {
+        const data = getActualProducts().filter(p => p.id === id)
+        return data.length ? resolve(data[0]) : resolve(null)
+    }, 150)
+})
 // Запрашиваем продукты, которые удовлетворяют текущему фильтру
 const filterProducts = (filter: TFilter): IProduct[] => {
     const filterProducts: IProduct [] = []

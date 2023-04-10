@@ -33,7 +33,7 @@ const CatalogProduct: FC<TProps> = ({ product, addBasket }: TProps) => {
             <div className="product__img" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/${product.img})`}}></div>
             <ProductWeight weight={product.weight} />
             <div className="product__name c-grey-2 fs-4 fw-mediumbold lh-4 mb-m-3">
-                <Link to={`product/${product.id}`}>
+                <Link to={`product/${product.id}`} data-testid={'product-item'}>
                     <span className="fw-bold">{getFirstWord(product.name)}</span> {getWithoutFirstWord(product.name)}
                 </Link>
             </div>

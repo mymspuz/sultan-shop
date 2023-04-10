@@ -1,8 +1,8 @@
 import React, {FC, useEffect, useState} from 'react'
 
 import { useAppSelector } from '../../../../../../store/hooks'
-import {Link} from "react-router-dom";
-import {getPrice} from "../../../../../../utils/utilsStr";
+import { Link } from 'react-router-dom'
+import { getPrice } from '../../../../../../utils/utilsStr'
 
 type TProps = {
     isMobile: boolean
@@ -18,7 +18,7 @@ const BtnBasket: FC<TProps> = ({ isMobile }: TProps) => {
     }, [stateBasket])
 
     return (
-        <Link to={'basket'}>
+        <Link to={'basket'} data-testid={'basket-link'}>
             {isMobile
             ?
                 <div className="toolbar-basket">

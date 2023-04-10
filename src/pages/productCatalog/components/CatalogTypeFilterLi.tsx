@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
-import {useAppSelector} from "../../../store/hooks";
-import {Loader} from "./index";
+
+import { useAppSelector } from '../../../store/hooks'
+import { Loader } from './index'
 
 type TProps = {
     change: (id: number) => void

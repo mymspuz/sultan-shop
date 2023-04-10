@@ -9,7 +9,7 @@ import {
     CatalogTypeFilterSideBar,
     CatalogProduct,
     CatalogCategoryDesc,
-    CatalogProductPagination, Loader
+    CatalogProductPagination, Loader, CatalogCategoryTitle, CatalogProductsList
 } from './components'
 import {ICrumb, IProduct, ISort } from '../../models/catalog'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
@@ -124,7 +124,7 @@ const ProductCatalogPage: FC = () => {
             <BreadCrumbs crumbs={crumbs} />
             <div className="catalog">
                 <div className="d-flex j-content-sb a-items-end">
-                    <h1 className="h1 fw-mediumbold lh-2 tt-uc c-grey-2">Косметика и гигиена</h1>
+                    <CatalogCategoryTitle catName={'Косметика и гигиена'} />
                     <CatalogSort change={changeSort} notMobile={true} />
                 </div>
                 {<CatalogTypeFilterHead change={changeFilterTypes} />}
@@ -163,14 +163,12 @@ const ProductCatalogPage: FC = () => {
                     </div>
                     <div className="catalog-products d-flex f-direct j-content-start">
                         <div className="products-list d-flex j-content-start a-items f-wrap">
-                            {isLoading ? <Loader /> : products && products.map(
-                                product =>
-                                    <CatalogProduct
-                                        key={product.id}
-                                        product={product}
-                                        addBasket={addBasket}
-                                    />
-                            )}
+                            {isLoading
+                                ?
+                                    <Loader />
+                                :
+                                    <CatalogProductsList products={products} addBasket={addBasket} />
+                            }
                         </div>
                         <CatalogProductPagination change={changePagination}/>
                         <CatalogCategoryDesc />

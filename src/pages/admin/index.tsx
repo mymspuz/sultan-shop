@@ -86,7 +86,7 @@ const AdminPage: FC = () => {
             ?
                 <Loader />
             :
-                <>
+                <div  data-testid={'admin-page'}>
                 <BreadCrumbs crumbs={crumbs} />
                 <ProductBtnCreate createProduct={createProduct} />
                 {open.isOpen && <ProductForm product={open.data} close={close} apply={applyChange} />}
@@ -143,7 +143,7 @@ const AdminPage: FC = () => {
                     :
                         <h2 className={'h2 c-grey-1 d-flex j-content'}>Товары не найдены</h2>
                     }
-                </>
+                </div>
     )
 }
 
